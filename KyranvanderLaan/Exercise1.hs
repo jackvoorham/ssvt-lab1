@@ -57,7 +57,7 @@ testsumNums2 :: Integer -> Bool
 testsumNums2 n = sumNums2 n == sumNums2' n
 
 testsumNums3 :: Integer -> Bool
-testsumNums3 n = let x = abs n in sumNums3 x ==  sumNums3' x
+testsumNums3 n = sumNums3 n ==  sumNums3' n
 
 main :: IO ()
 main = do
