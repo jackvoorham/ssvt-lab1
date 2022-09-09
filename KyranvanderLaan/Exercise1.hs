@@ -36,7 +36,7 @@ boys = [Matthew, Peter, Jack, Arnold, Carl]
 -- QuickCheck pdf from canvas: https://canvas.uva.nl/courses/32483/files/7077441?module_item_id=1412882.
 -- Personally it took some time for me to process how the positive integer generator worked.
 -- Tests returned 100 passed tests for both exercises 2 and 3
--- Time it took: 40 minutes.
+-- Time spend: 40 minutes.
 
 sumNums2 :: Integer -> Integer
 sumNums2 n = sum [k^2 | k <- [1..n]]

@@ -40,8 +40,9 @@ boys = [Matthew, Peter, Jack, Arnold, Carl]
 --    Or are you testing whether subsequences satisfies a part of its specification? Or are you testing something else still?
 -- A: I believe we are actually testing a subset of natural numbers, namely the natural number 1 until 25. This means we aren't 
 --    checking a mathematical fact because we cannot draw a conclusion about all natural numbers from only a small subset.
---    I think that the only thing we can say for certain is that the property holds for all natural number between 1 and 25.
--- This assignment took roughly 1 hour for me.
+--    I think that the only thing we can say for certain is that the property holds for all natural number between 1 and 25 meaning
+--    we are only testing part of the specification.
+-- Time spend: roughly 1 hour for me.
 
 subLength1 :: [Integer] -> Int
 subLength1 n = length (n)
@@ -50,7 +51,7 @@ subLength2 :: [Integer] -> Int
 subLength2 n = length (subsequences (n))
 
 testsubLength :: [Integer] -> Property
-testsubLength n = (length (n) >= 0 && length (n) < 25) ==> subLength2 n == 2^(subLength1 n)
+testsubLength n = (length (n) >= 1 && length (n) < 25) ==> subLength2 n == 2^(subLength1 n)
 
 main :: IO ()
 main = do
