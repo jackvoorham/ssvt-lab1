@@ -1,6 +1,6 @@
 -- Base code imported from Lab 1 at https://canvas.uva.nl/courses/32483/files/7147680?wrap=1&fd_cookie_set=1
 
-module Exercise4 where
+module Exercise5 where
 import Data.List
 import Test.QuickCheck    
 
@@ -26,16 +26,19 @@ data Boy = Matthew | Peter | Jack | Arnold | Carl
 boys = [Matthew, Peter, Jack, Arnold, Carl]
 
 -- My thoughts:
--- First I'll answer the question about how to test whether the reverse function works.
--- We can test this by reversing a number twice and checking whether that equals the first number.
--- If this proves correct, the function works as intended.
--- One thing we noticed is that the reversal of a negative number doesn't work. However, this is not important since we only
--- need to test prime numbers.
--- We use the proved function primes to get a list of all the prime numbers to test and the function prime to test if the
--- reversal of a number is also a prime.
--- For some reason adding k < 10000 to the conditions of the range doesn't actually end the range it just hangs at the last number with k < 10000.
--- For this reason we added the takeWhile statement which takes inspiration from the takeWhile functionality explanation at:
--- https://www.haskelltutorials.com/guides/haskell-lists-ultimate-guide.html
+-- We will again use the provided prime and primes functions to get the list of primes and check whether
+-- the sums are primes.
+-- Personally the problem for my lies in the fact that I cannot figure out how to drop one element and then take the 
+-- next 101 elements from an infinite list which costs me a lot of time.
+-- This is eventually fixed by creating a secundary function which recursively drops the first n elements of primes starting at 0
+-- and increasing by 1 with each iteration untill a solution has been found.
+-- The answer relies on whether the dropping of the first n elements and taking the next 101 of the primes list is correct.
+-- Time spend: 1.5 hours.
 
-reversibleStream :: [Integer]
-reversibleStream = takeWhile (\x -> x < 10000) [k | k <- primes, prime(reversal(k)) == True]
+return101Primes :: Int -> Integer
+return101Primes n = if prime(sum(drop n(take (n+101) (primes)))) == True
+                      then sum(drop n(take (n+101) (primes)))
+                      else return101Primes (n+1)
+
+consecutive101Prime :: Integer
+consecutive101Prime = return101Primes 0
