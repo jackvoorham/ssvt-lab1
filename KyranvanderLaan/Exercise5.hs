@@ -36,7 +36,6 @@ boys = [Matthew, Peter, Jack, Arnold, Carl]
 -- For some reason adding k < 10000 to the conditions of the range doesn't actually end the range it just hangs at the last number with k < 10000.
 -- For this reason we added the takeWhile statement which takes inspiration from the takeWhile functionality explanation at:
 -- https://www.haskelltutorials.com/guides/haskell-lists-ultimate-guide.html
--- Time spend: 1 hour
 
 reversibleStream :: [Integer]
 reversibleStream = takeWhile (\x -> x < 10000) [k | k <- primes, prime(reversal(k)) == True]
