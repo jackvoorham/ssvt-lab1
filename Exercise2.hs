@@ -6,6 +6,8 @@ import GHC.Integer (Integer)
 genSubsequences :: Int -> [[Int]]
 genSubsequences n = subsequences [1..n]
 
+-- Everyone's individual codes: https://github.com/jackvoorham/ssvt-lab1
+
 ---- Arie Bisfki
 -- Create abstraction over subsequences function so that it can be called more simply.
 -- Devise property function.
