@@ -18,6 +18,8 @@ factorial n = product [1..n]
 prop :: Int -> Property
 prop n = n > 0 && n < 10 ==> length (perms' n) == factorial n
 
+-- Everyone's individual codes: https://github.com/jackvoorham/ssvt-lab1
+
 ---- Arie Bisfki
 -- Need to think up a formula for the number of permutations of a list of (n) distinct objects...
 -- if n = 1 then 1

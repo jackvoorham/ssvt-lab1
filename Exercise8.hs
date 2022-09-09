@@ -1,4 +1,5 @@
 -- Comments
+-- Everyone's individual codes: https://github.com/jackvoorham/ssvt-lab1
 -- Kyran van der Laan:
 -- Unfortunately I wasn't able to complete exercises 7 and 8. However, this is how I would go about finishing them.
 -- Exercise 7:
